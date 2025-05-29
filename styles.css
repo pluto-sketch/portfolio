@@ -1,20 +1,23 @@
 /* General Styling */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
 body {
-    font-family: "Poppins", sans-serif; /* Sleek modern font */
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark mode background color */
-    color: #e0e0e0; /* Light text for dark mode */
+    background-color: #121212;
+    color: #e0e0e0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 header {
     background-color: #1e1e1e;
     color: #fff;
     padding: 1rem 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Modern shadow effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     width: 100%;
     position: sticky;
     top: 0;
@@ -27,71 +30,114 @@ nav ul {
     justify-content: center;
     padding: 0;
     margin: 0;
-    gap: 2rem; /* Adds spacing between navigation items */
+    gap: 2.5rem;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00aaff;
+    transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #00aaff; /* Stylish accent color */
+    color: #00aaff;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 main {
     display: flex;
-    flex-wrap: wrap; /* Ensures widgets wrap on smaller screens */
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem; /* Space between widgets */
-    padding: 2rem;
-    max-width: 1200px; /* Limits the width of content */
+    gap: 2.5rem;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section {
-    background-color: #1e1e1e; /* Slightly lighter background for cards */
-    border-radius: 12px; /* Modern rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Adds depth */
-    width: 300px; /* Fixed square-like width */
-    height: 300px; /* Fixed square-like height */
-    padding: 1rem;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    width: 320px;
+    min-height: 320px;
+    padding: 1.5rem 1.8rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition:
-        transform 0.3s ease,
-        background-color 0.3s ease; /* Smooth hover effect animation */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section:hover {
-    transform: translateY(-10px); /* Slight lift effect */
-    background-color: #252525; /* Slightly lighter hover color */
+    transform: translateY(-12px);
+    background-color: #282828;
+    box-shadow: 0 12px 20px rgba(0, 170, 255, 0.4);
 }
 
 h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #f4f4f4; /* Light heading color for dark mode */
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    color: #f4f4f4;
 }
 
 p {
-    font-size: 1rem;
-    color: #bbb; /* Subtle text color */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #ccc;
+    font-weight: 400;
 }
 
 footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     background-color: #1e1e1e;
-    color: #fff;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2); /* Adds depth at bottom */
+    color: #888;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    font-size: 0.9rem;
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #888; /* Subtle text color */
+/* Responsive tweaks */
+@media (max-width: 700px) {
+    main {
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 400px;
+        min-height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
