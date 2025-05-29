@@ -1,0 +1,97 @@
+/* General Styling */
+body {
+    font-family: "Poppins", sans-serif; /* Sleek modern font */
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark mode background color */
+    color: #e0e0e0; /* Light text for dark mode */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Modern shadow effect */
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 2rem; /* Adds spacing between navigation items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #00aaff; /* Stylish accent color */
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Ensures widgets wrap on smaller screens */
+    justify-content: center;
+    gap: 2rem; /* Space between widgets */
+    padding: 2rem;
+    max-width: 1200px; /* Limits the width of content */
+}
+
+.section {
+    background-color: #1e1e1e; /* Slightly lighter background for cards */
+    border-radius: 12px; /* Modern rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Adds depth */
+    width: 300px; /* Fixed square-like width */
+    height: 300px; /* Fixed square-like height */
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease; /* Smooth hover effect animation */
+}
+
+.section:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    background-color: #252525; /* Slightly lighter hover color */
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #f4f4f4; /* Light heading color for dark mode */
+}
+
+p {
+    font-size: 1rem;
+    color: #bbb; /* Subtle text color */
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #1e1e1e;
+    color: #fff;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2); /* Adds depth at bottom */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #888; /* Subtle text color */
+}
